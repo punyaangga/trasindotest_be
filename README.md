@@ -1,9 +1,10 @@
 ## How to Install
 1. Clone this repo to your local
-2. create a database with name kodegiri and schema kodegiri
+2. create a database with name trasindo and schema trasindo
 3. change file .env.example to .env
 4. composer install
-5. php artisan serve --port 8000
+5. php artisan migrate
+6. php artisan serve --port 8000
 
 ## Docs API
 https://documenter.getpostman.com/view/9643334/2s9YC5yCJj
