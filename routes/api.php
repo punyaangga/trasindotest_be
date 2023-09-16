@@ -28,16 +28,16 @@ use App\Http\Controllers\Client\SellWasteController;
 Route::group(['middleware' => ['auth:sanctum','restrictRole:admin'],'api'], function(){
     Route::apiResource('/jenisSampah', MsTypeWasteController::class);
     Route::post('/updateJenisSampah/{id}', [MsTypeWasteController::class,'updateData']);
+    Route::post('/logout',[ApiAuthController::class,'logout']);
 });
 Route::group(['middleware' => ['auth:sanctum','restrictRole:client'],'api'], function(){
     Route::apiResource('/jualSampah', SellWasteController::class);
     Route::apiResource('/listSampah', ListWasteController::class);
-
-});
-
-Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout',[ApiAuthController::class,'logout']);
+
 });
+
+
 Route::post('/register',[ApiAuthController::class,'register']);
 Route::post('/login',[ApiAuthController::class,'login']);
 

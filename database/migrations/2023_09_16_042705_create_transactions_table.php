@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('mtw_id');
+            $table->integer('tr_qty');
+            $table->string('tr_qty_unit');
+            $table->float('tr_total_price');
             $table->timestamps();
         });
     }
